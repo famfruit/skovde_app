@@ -1,0 +1,24 @@
+<svg id="HOUSE" xmlns="http://www.w3.org/2000/svg" width="1541.295" height="708.167" viewBox="0 0 1541.295 708.167">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff9494;
+      }
+    </style>
+  </defs>
+  <g id="baseline" transform="translate(0 636.357)">
+    <rect id="Rectangle_23" data-name="Rectangle 23" class="cls-1" width="1541.295" height="71.81"/>
+  </g>
+  <g id="pillar" transform="translate(647.58 151.502)">
+    <rect id="Rectangle_24" data-name="Rectangle 24" class="cls-1" width="69.583" height="484.854"/>
+  </g>
+  <g id="pillar_copy" transform="translate(1391.66 150.928)">
+    <rect id="Rectangle_25" data-name="Rectangle 25" class="cls-1" width="69.583" height="485.429"/>
+  </g>
+  <g id="pillar_copy_2" transform="translate(1027.126 0.077)">
+    <rect id="Rectangle_26" data-name="Rectangle 26" class="cls-1" width="69.583" height="437.071" transform="translate(0 65.297) rotate(-69.787)"/>
+  </g>
+  <g id="pillar_copy_3" transform="translate(647.966)">
+    <rect id="Rectangle_27" data-name="Rectangle 27" class="cls-1" width="69.583" height="430.732" transform="translate(24.382 216.1) rotate(-110.512)"/>
+  </g>
+</svg>

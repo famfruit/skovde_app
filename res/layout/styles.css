@@ -1,0 +1,1110 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+@keyframes note_pop {
+  0% {
+    bottom: -100px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 60px;
+    opacity: 1;
+  }
+}
+@keyframes pop_counter {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    width: 0%;
+    opacity: 0;
+  }
+}
+.app_hidden {
+  display: none;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  background: #f7f7f7;
+  overflow: auto;
+  color: #4d4d4d;
+  box-sizing: border-box;
+}
+body strong.thin {
+  font-weight: 300;
+}
+body .post_note_pop {
+  width: 100%;
+  z-index: 2;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  animation: note_pop 0.3s ease;
+  font-family: "Roboto", sans-serif;
+  background: #fff;
+  font-size: 0.8em;
+  padding: 20px 0;
+}
+body .post_note_pop::after {
+  content: "";
+  left: 0;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: #f7f7f7;
+  transition: all 0.1s ease;
+  animation: pop_counter 3.5s ease;
+}
+body .post_note_pop strong {
+  text-transform: capitalize;
+}
+body .mp_popup, body .note_container {
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  background: rgba(255, 255, 255, 0.7);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+body .mp_popup .msg, body .note_container .msg {
+  position: absolute;
+  top: 20%;
+  width: 90%;
+  background: #fff;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 30px -20px #d25774;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+body .mp_popup .msg textarea, body .note_container .msg textarea {
+  width: 95%;
+  margin: 0 auto;
+  left: 2.5%;
+  position: relative;
+  border: 2px solid #f7f7f7;
+  min-height: 25vh;
+  box-sizing: border-box;
+  padding: 5px;
+  font-family: "Roboto", sans-serif;
+}
+body .mp_popup .msg textarea::placeholder, body .note_container .msg textarea::placeholder {
+  font-size: 0.9em;
+  opacity: 0.5;
+}
+body .mp_popup .msg h1, body .note_container .msg h1 {
+  text-align: center;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+body .mp_popup .msg h1 strong, body .note_container .msg h1 strong {
+  display: block;
+  color: #D25774;
+  font-weight: 400;
+}
+body .mp_popup .msg .mp_buttons, body .note_container .msg .mp_buttons {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+body .mp_popup .msg .mp_buttons .btn_y, body .note_container .msg .mp_buttons .btn_y {
+  background: #D25774;
+  color: #fff;
+  border: 2px solid #D25774;
+}
+body .mp_popup .msg .mp_buttons .btn_n, body .note_container .msg .mp_buttons .btn_n {
+  margin-right: 10%;
+  border: 2px solid #f7f7f7;
+}
+body .mp_popup .msg .mp_buttons div, body .note_container .msg .mp_buttons div {
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 4px;
+  width: 45%;
+  font-family: "Roboto", sans-serif;
+  float: left;
+}
+body .multif__actionbar.t2.no_mid div.left, body .multif__actionbar.t2.no_mid div.right {
+  width: 50%;
+}
+body .multif__actionbar.t2.amount_3 div.left div.mp_bar, body .multif__actionbar.t2.amount_3 div.right div.mp_bar {
+  width: 100%;
+}
+body .multif__actionbar.no_z {
+  z-index: initial;
+}
+body .multif__actionbar {
+  z-index: 100;
+}
+body .multif__actionbar.t2 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  background: #fff;
+  border-top: 2px solid #f7f7f7;
+}
+body .multif__actionbar.t2 div {
+  width: 35%;
+  position: absolute;
+  box-sizing: border-box;
+}
+body .multif__actionbar.t2 div div {
+  width: 50%;
+  float: left;
+  text-align: center;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  padding-top: 15px;
+  font-size: 0.6em;
+  height: 60px;
+  color: #a1a1a1;
+}
+body .multif__actionbar.t2 div div::before {
+  margin-bottom: 6px;
+  display: block;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.4em;
+  color: #D25774;
+}
+body .multif__actionbar.t2 div .mp_bar.active {
+  background: #D25774;
+  color: #f7f7f7;
+}
+body .multif__actionbar.t2 div .mp_bar.active::before {
+  color: #fff;
+}
+body .multif__actionbar.t2 div .mp_bar.new::before {
+  content: "";
+  font-weight: 900;
+}
+body .multif__actionbar.t2 div .mp_bar.all::before {
+  content: "";
+  font-weight: 900;
+}
+body .multif__actionbar.t2 div .mp_bar.done::before {
+  content: "";
+}
+body .multif__actionbar.t2 div .mp_bar.undone::before {
+  content: "";
+}
+body .multif__actionbar.t2 div .mp_bar.overview::before {
+  font-weight: 900;
+  content: "";
+}
+body .multif__actionbar.t2 div .mp_bar.queue.on::before {
+  font-weight: 900;
+  content: "";
+}
+body .multif__actionbar.t2 div .mp_bar.queue.off::before {
+  font-weight: 400;
+  content: "";
+}
+body .multif__actionbar.t2 div .mp_bar.note::before {
+  content: "";
+}
+body .multif__actionbar.t2 div .mp_bar.activate::before {
+  content: "";
+  font-weight: 900;
+}
+body .multif__actionbar.t2 div .mp_bar.archive::before {
+  content: "";
+}
+body .multif__actionbar.t2 .left {
+  left: 0;
+}
+body .multif__actionbar.t2 .right {
+  right: 0;
+}
+body .multif__actionbar.t2 .middle {
+  width: 30%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+body .multif__actionbar.t2 .middle div {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: -10px;
+  border-radius: 15px;
+  transform: rotate(45deg);
+  border: 4px solid #f7f7f7;
+  background: #D25774;
+  text-align: center;
+}
+body .multif__actionbar.t2 .middle div::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #fff;
+  font-size: 3em;
+  transform: rotate(-45deg);
+  position: relative;
+  top: -3px;
+  left: 1px;
+  content: "";
+}
+body .sign-footer {
+  position: absolute;
+  top: 720px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+body .sign-footer h1 {
+  font-family: "Roboto", sans-serif;
+  color: #9d9d9d;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.7em;
+}
+body .sign-footer h1 strong {
+  font-weight: 400;
+}
+body .logbg {
+  background-image: url("../../res/img/svg/build.svg");
+  background-position: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  width: 100%;
+  height: 750px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+body .app-header {
+  width: 100%;
+  height: 250px;
+  background-image: url("../../res/img/svg/svglogo.png");
+  background-repeat: no-repeat;
+  background-size: 175px;
+  background-position: center;
+}
+body .app-header::before {
+  background: #000;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  top: 0;
+  left: 0;
+}
+body .logcontainer {
+  height: 150px;
+  width: 80%;
+  margin: 0 auto;
+}
+body .logcontainer .appsign-sign {
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+}
+body .logcontainer .appsign-sign button {
+  border-radius: 5px;
+  padding: 13px 10px;
+  border: 0;
+  box-shadow: 0;
+  outline: 0;
+  color: #fff;
+  width: 70%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1.1em;
+  background: #D25774;
+  transition: all 0.2s ease;
+}
+body .logcontainer .appsign-sign button:active, body .logcontainer .appsign-sign button:focus {
+  box-shadow: 0px 0px 10px #D25774;
+}
+body .logcontainer .appsign-holder {
+  position: relative;
+  margin-bottom: 20px;
+}
+body .logcontainer .appsign-holder input.invalid {
+  color: #fff;
+  background: #D25774;
+  font-weight: 600;
+  padding-left: 16px;
+}
+body .logcontainer .appsign-holder input.invalid::placeholder {
+  padding-left: 0;
+  text-align: center;
+  color: #f2f1f1;
+}
+body .logcontainer .appsign-holder input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px;
+  padding-top: 16px;
+  padding-left: 45px;
+  border-radius: 3px;
+  outline-color: #D25774;
+}
+body .logcontainer .appsign-holder input::placeholder {
+  color: #c9c9c9;
+}
+body .logcontainer .appsign-holder img.invalid {
+  display: none;
+}
+body .logcontainer .appsign-holder img {
+  position: absolute;
+  left: 10px;
+  transform: scale(1.2);
+  top: 14px;
+  display: block;
+}
+body .app_topbar {
+  width: 100%;
+  height: 150px;
+  background: #D25774;
+  position: relative;
+}
+body .app_topbar h1 {
+  padding: 0;
+  margin: 0;
+  padding: 0 10px;
+  position: absolute;
+  bottom: 10px;
+  color: #fff;
+}
+body .app-topcard {
+  height: 175px;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #D25774 0%, #b93c5a 100%);
+  margin-bottom: 0;
+  position: relative;
+  padding: 0 10px;
+}
+body .app-topcard .top-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  position: absolute;
+  color: #fff;
+  bottom: 15px;
+}
+body .app-topcard .top-name strong {
+  font-weight: 300;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+}
+body .app-topcard .top-time {
+  margin: 0 auto;
+  position: relative;
+  top: 20px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+}
+body .app-topcard .top-time strong {
+  display: block;
+  font-weight: 300;
+  font-size: 14px;
+}
+body .app-cat * {
+  font-family: "Roboto", sans-serif;
+}
+body .app-cat h1 {
+  margin-top: 40px;
+  text-transform: uppercase;
+  color: #a1a1a1;
+  font-size: 12px;
+  padding: 2px 10px;
+}
+body .app-cat a {
+  display: block;
+}
+body .app-cat .cat-listobject.settings {
+  position: relative;
+}
+body .app-cat .cat-listobject.settings .settings-link {
+  color: #D25774;
+  font-size: 11px;
+}
+body .app-cat .cat-listobject.settings .setting-desc {
+  font-weight: 300;
+  font-size: 11px;
+}
+body .app-cat .cat-listobject.settings .clo-toggle {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  border-radius: 10px;
+  background: #ededed;
+  width: 45px;
+  height: 22px;
+}
+body .app-cat .cat-listobject.settings .clo-toggle .clo-ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+body .app-cat .cat-listobject.settings .clo-toggle .clo-ball.off {
+  background: #fff;
+  left: 1px;
+  top: 1px;
+}
+body .app-cat .cat-listobject.settings .clo-toggle .clo-ball.on {
+  width: 16px;
+  height: 16px;
+  right: 2px;
+  top: 2px;
+  background: rgba(210, 87, 116, 0.7);
+  border: 1px solid #D25774;
+}
+body .app-cat .cat-listobject.settings span::after {
+  display: none;
+}
+body .app-cat .cat-listobject {
+  padding: 15px 10px;
+  background: #FFF;
+  border-bottom: 1px solid #f7f7f7;
+}
+body .app-cat .cat-listobject form button {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #626262;
+  padding: 0;
+  font-size: 14px;
+  left: 10px;
+  width: calc(100% - 30px);
+  text-align: left;
+  position: relative;
+}
+body .app-cat .cat-listobject form button::after {
+  opacity: 0.5;
+  right: 10px;
+  top: 5px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  display: block;
+  content: " ";
+  background-image: url("../../res/img/svg/next.svg");
+}
+body .app-cat .cat-listobject img {
+  width: 25px;
+  display: inline-block;
+  height: 25px;
+  position: relative;
+  float: left;
+}
+body .app-cat .cat-listobject span {
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 30px);
+  color: #626262;
+  font-size: 14px;
+  left: 10px;
+}
+body .app-cat .cat-listobject span strong.numb {
+  border-radius: 50%;
+  background: #D25774;
+  color: #fff;
+  padding: 3px 6px;
+  font-size: 11px;
+  top: -2px;
+  font-weight: 900;
+  position: relative;
+  left: 10px;
+}
+body .app-cat .cat-listobject span::after {
+  right: 10px;
+  top: 3px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  display: block;
+  content: " ";
+  background-image: url("../../res/img/svg/next.svg");
+}
+body .inbox-profile.done h3.no__tasks, body .inbox-profile.undone h3.no__tasks {
+  padding-left: 20px;
+  font-weight: 300;
+}
+body .inbox-profile.done a .inprofile-container, body .inbox-profile.undone a .inprofile-container {
+  padding-bottom: 15px;
+  position: relative;
+  border-bottom: 2px solid #f7f7f7;
+}
+body .inbox-profile.done a .inprofile-container .tasks__on_duty span {
+  background: #d9d9d9;
+}
+body .inbox-profile.done a .inprofile-container h3 {
+  opacity: 0.5;
+}
+body .inbox-profile.done a .inprofile-container .tasks__type {
+  opacity: 0.5;
+}
+body .inbox-profile.done a .inprofile-container .task__completed {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  background: rgba(210, 87, 116, 0.1);
+  padding: 12px;
+  text-align: center;
+  box-sizing: border-box;
+}
+body .inbox-profile.done a .inprofile-container .task__completed::after {
+  font-size: 1.2em;
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #D25774;
+}
+body .inbox-profile.undone .inprofile-container h2 {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 0;
+}
+body .inbox-profile.undone .inprofile-container h2::after {
+  left: -10px;
+  content: "";
+  top: 5px;
+  display: block;
+  position: absolute;
+  background: #D25774;
+  opacity: 0.8;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+body .inbox-profile.undone .inprofile-container h2::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  left: -14px;
+  top: 1px;
+  background: #D25774;
+  opacity: 0.3;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+body .inbox-profile.last {
+  margin-bottom: 100px;
+}
+body .inbox-profile {
+  font-family: "Roboto", sans-serif;
+}
+body .inbox-profile a {
+  text-decoration: none;
+}
+body .inbox-profile .inprofile-container.data {
+  padding: 0;
+}
+body .inbox-profile .inprofile-container.data .ipc {
+  position: relative;
+  padding: 10px 20px 0 20px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #f7f7f7;
+}
+body .inbox-profile .inprofile-container.data .ipc .date {
+  position: absolute;
+  font-size: 0.7em;
+  right: 20px;
+  font-weight: 400;
+  bottom: 10px;
+}
+body .inbox-profile .inprofile-container.data .lable.done::after {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  color: #a1a1a1;
+  right: -25px;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 3px 4px 2px 4px;
+  top: 0px;
+  border-radius: 3px;
+}
+body .inbox-profile .inprofile-container.data .lable {
+  position: relative;
+  padding: 3px 6px;
+  left: 0px;
+  border-radius: 3px;
+}
+body .inbox-profile .inprofile-container.data .lable.intresse {
+  background: rgba(255, 204, 0, 0.17);
+  color: #4b4b4b;
+}
+body .inbox-profile .inprofile-container.data .lable.request {
+  background: rgba(81, 0, 221, 0.17);
+  color: #4b4b4b;
+}
+body .inbox-profile .inprofile-container.data .lable.fel {
+  background: rgba(255, 148, 148, 0.3);
+  color: #4b4b4b;
+}
+body .inbox-profile .inprofile-container.data h2 {
+  font-size: 0.8em;
+  padding: 1px;
+  margin-top: 5px;
+  font-weight: 300;
+  padding-bottom: 0px;
+}
+body .inbox-profile .inprofile-container {
+  background: #fff;
+  padding: 10px 20px;
+}
+body .inbox-profile .inprofile-container .tasks__date {
+  position: absolute;
+  right: 15px;
+  color: rgba(98, 98, 98, 0.7);
+  font-size: 12px;
+  top: 15px;
+}
+body .inbox-profile .inprofile-container .tasks__on_duty {
+  position: relative;
+  left: -2px;
+}
+body .inbox-profile .inprofile-container .tasks__on_duty .t_1 {
+  left: 0;
+}
+body .inbox-profile .inprofile-container .tasks__on_duty .t_2 {
+  left: -13px;
+}
+body .inbox-profile .inprofile-container .tasks__on_duty .t_3 {
+  left: -25px;
+}
+body .inbox-profile .inprofile-container .tasks__on_duty span {
+  font-size: 0.6em;
+  color: #f7f7f7;
+  background: #D25774;
+  text-align: center;
+  width: 24px;
+  position: relative;
+  left: -12px;
+  height: 17px;
+  padding-top: 5px;
+  display: inline-block;
+  border-radius: 50%;
+  font-weight: 900;
+  border: 2px solid #f7f7f7;
+}
+body .inbox-profile .inprofile-container .tasks__title {
+  margin: 0;
+  max-width: 90%;
+  font-size: 1em;
+  margin-top: 5px;
+  color: #626262;
+}
+body .inbox-profile .inprofile-container .tasks__type.fel {
+  background: rgba(210, 87, 116, 0.2);
+  color: #D25774;
+}
+body .inbox-profile .inprofile-container .tasks__type {
+  font-size: 0.6em;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+body .inbox-profile .inprofile-container .lable {
+  font-size: 0.6em;
+  color: #a1a1a1;
+}
+body .inbox-profile .inprofile-container h2 {
+  font-weight: 400;
+  color: #636363;
+  font-size: 0.9em;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+body .inbox-profile h1 {
+  padding: 10px 20px 0 20px;
+  text-transform: uppercase;
+  color: #a1a1a1;
+  font-weight: 400;
+  font-size: 12px;
+}
+body .inbox-object {
+  position: relative;
+}
+body .inbox-object .blip {
+  left: 12px;
+  top: 26px;
+  display: block;
+  position: absolute;
+  background: #D25774;
+  opacity: 0.8;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+body .inbox-object .blip::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  left: -4px;
+  top: -4px;
+  background: #D25774;
+  opacity: 0.3;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+body .topbar.inbox, body .inbox-object {
+  font-family: "Roboto", sans-serif;
+}
+body .topbar .goback__home {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  transform: rotate(180deg);
+  background-image: url("../../res/img/svg/menu.svg");
+}
+body .topbar .goback__btn {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+body .topbar .goback__btn::after, body .topbar .goback__btn::before {
+  width: 10px;
+  height: 2px;
+  content: " ";
+  display: block;
+  background: white;
+  margin: 0 auto;
+  position: absolute;
+}
+body .topbar .goback__btn::after {
+  top: 6px;
+  transform: rotate(45deg);
+}
+body .topbar .goback__btn::before {
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg);
+}
+body .topbar.inbox.tasks {
+  position: relative;
+  overflow: initial;
+}
+body .topbar.inbox {
+  border-bottom: 1px solid rgba(98, 98, 98, 0.2);
+  background: #D25774;
+  margin: 0;
+  overflow: auto;
+  padding: 10px 0 5px 0;
+}
+body .topbar.inbox .tasks-top {
+  padding: 60px 10px 0px 20px;
+}
+body .topbar.inbox .tasks-top h1 {
+  text-align: left;
+  font-size: 1.7em;
+  margin: 0;
+  font-weight: 300;
+}
+body .topbar.inbox .tasks-top span {
+  color: rgba(247, 247, 247, 0.8);
+  font-weight: 500;
+}
+body .topbar.inbox .tasks-top .tasks-progress {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+body .topbar.inbox .tasks-top .tasks-progress h1 {
+  text-align: right;
+  font-size: 4em;
+  font-weight: 900;
+}
+body .topbar.inbox .tasks-top .tasks-progress h1 strong {
+  font-weight: 200;
+  background: none;
+  position: relative;
+}
+body .topbar.inbox .tasks-progbar {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 10px;
+}
+body .topbar.inbox .tasks-progbar .tasks_current {
+  transition: all 0.2s ease;
+  height: 100%;
+  background: #ff99b0;
+}
+body .topbar.inbox .refid {
+  margin-bottom: 50px;
+  line-height: 1.8;
+  font-size: 0.7em;
+}
+body .topbar.inbox .refid strong {
+  font-size: 16px;
+}
+body .topbar.inbox .tpbar__inbox.icons {
+  width: 80%;
+  text-align: center;
+  height: 70px;
+  padding-top: 40px;
+  margin-top: 20px;
+}
+body .topbar.inbox .tpbar__inbox.icons i {
+  width: 33.3333333333%;
+  float: left;
+  font-size: 1.2em;
+}
+body .topbar.inbox .tpbar__inbox.icons i::before {
+  padding: 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(247, 247, 247, 0.6);
+  color: #f7f7f7;
+}
+body .topbar.inbox .tpbar__inbox.icons i span {
+  position: relative;
+  top: 30px;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  color: #f7f7f7;
+  font-weight: 300;
+  font-size: 0.5em;
+  text-transform: uppercase;
+}
+body .topbar.inbox .tpbar__inbox {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 15px;
+  overflow: auto;
+  padding-bottom: 10px;
+}
+body .topbar.inbox .tpbar__inbox .inbox__divider {
+  width: 50%;
+  float: left;
+}
+body .topbar.inbox .tpbar__inbox .inbox__divider span {
+  text-align: center;
+  display: block;
+  font-size: 0.6em;
+  font-weight: 400;
+  color: rgba(247, 247, 247, 0.8);
+}
+body .topbar.inbox .tpbar__inbox .inbox__divider h2 {
+  color: #f7f7f7;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+  margin: 0;
+}
+body .topbar.inbox h1 {
+  text-align: center;
+  font-size: 16px;
+  color: #f7f7f7;
+  font-weight: 300;
+}
+body .topbar.inbox h1 strong {
+  background: rgba(247, 247, 247, 0.15);
+  border-radius: 3px;
+  padding: 3px 6px;
+}
+body .inbox-container {
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+body .inbox-container a {
+  text-decoration: none;
+  overflow: auto;
+}
+body .inbox-container .inbox-object.nill h1.st_3::after, body .inbox-container .inbox-object.nill h1.st_2::after, body .inbox-container .inbox-object.nill h1.st_1::after {
+  opacity: 0.3;
+}
+body .inbox-container .inbox-object.nill h1 {
+  color: rgba(98, 98, 98, 0.4) !important;
+}
+body .inbox-container .inbox-object.nill span {
+  color: rgba(98, 98, 98, 0.2) !important;
+}
+body .inbox-container .inbox-object.one {
+  opacity: 1;
+}
+body .inbox-container .inbox-object {
+  border-bottom: 1px solid rgba(98, 98, 98, 0.2);
+  padding: 20px 30px;
+  position: relative;
+}
+body .inbox-container .inbox-object h1.st_3::after {
+  content: "Förfrågan";
+  background: rgba(150, 0, 255, 0.1);
+  color: rgba(150, 0, 255, 0.8);
+}
+body .inbox-container .inbox-object h1.st_2::after {
+  content: "Intresse";
+  background: rgba(215, 172, 42, 0.1);
+  color: rgba(215, 172, 42, 0.8);
+}
+body .inbox-container .inbox-object h1.st_1::after {
+  content: "Felanmälan";
+  background: rgba(210, 87, 116, 0.2);
+  color: rgba(210, 87, 116, 0.8);
+}
+body .inbox-container .inbox-object h1 {
+  font-size: 16px;
+  color: #626262;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+}
+body .inbox-container .inbox-object h1::after {
+  position: absolute;
+  top: 45px;
+  left: 28px;
+  border-radius: 3px;
+  font-size: 11px;
+  text-transform: capitalize;
+  padding: 2px 5px;
+}
+body .inbox-container .inbox-object span.name {
+  margin-top: 3px;
+  max-height: 33px;
+  overflow: hidden;
+}
+body .inbox-container .inbox-object span.street {
+  display: none;
+}
+body .inbox-container .inbox-object span.name {
+  font-weight: 300;
+  font-size: 13px;
+  font-weight: 400;
+  display: block;
+}
+body .inbox-container .inbox-object span.timeago {
+  position: absolute;
+  top: 24px;
+  right: 10px;
+  font-size: 12px;
+  color: rgba(98, 98, 98, 0.7);
+}
+body .inbox-container .inbox-object span.type.intresse {
+  color: #88731F;
+  background: rgba(255, 204, 0, 0.2);
+}
+body .inbox-container .inbox-object span.type.fel {
+  background: rgba(255, 148, 148, 0.3);
+  color: #D25774;
+}
+body .inbox-container .inbox-object span.type {
+  position: relative;
+  top: 5px;
+  border-radius: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: none;
+  background: grey;
+  padding: 3px 10px;
+}
+body .inbox-container .inbox-object span {
+  color: #a1a1a1;
+}
+body .betah1 {
+  font-family: "Roboto", sans-serif;
+  color: #626262;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 300;
+}
+body .testsubject {
+  display: block;
+  padding: 10px;
+  padding-bottom: 100px;
+}
+body .testsubject span {
+  display: block;
+  font-size: 13px;
+}
+body .testsubject span, body .testsubject input {
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  color: #626262;
+}
+body .testsubject button {
+  border-radius: 15px;
+  padding: 13px 10px;
+  border: 0;
+  box-shadow: 0;
+  outline: 0;
+  color: #fff;
+  width: 60%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1.1em;
+  background: linear-gradient(90deg, #D25774, #FF9494);
+  transition: all 0.2s ease;
+}
+body .testsubject button:active, body .testsubject button:focus {
+  box-shadow: 0px 0px 10px #D25774;
+}
+body .testsubject select {
+  text-align: left;
+  margin-bottom: 20px;
+}
+body .testsubject select option {
+  text-align: left;
+}
+body .testsubject textarea {
+  min-height: 100px;
+}
+body .testsubject input, body .testsubject textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #626262;
+  border-radius: 3px;
+  outline-color: #D25774;
+  margin-bottom: 20px;
+}
+body .testsubject input::placeholder, body .testsubject textarea::placeholder {
+  color: #c9c9c9;
+}
+
+.input.appsign {
+  border: 0;
+  border-bottom: 1px solid #FF9494;
+}
+
+/*# sourceMappingURL=styles.css.map */
