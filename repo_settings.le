@@ -1,3 +1,4 @@
 #allowed_files
 res/classes/base.class.php
+res/js/mp_actions.js
 index.php
