@@ -78,19 +78,4 @@
         } ?>
       </div>
 <?php } ?>
-
-
-  <?php
-
-    #foreach($np_multinav as $key => $value){
-    #  $classIndex = ($value == "middle") ? "class='big'" : "class='".$value."'";
-    #  ?>
-        <!--<div
-          <?php #echo $classIndex ?>
-          >
-       <?php #echo ($value != "middle") ? $key : ""; ?>
-     </div> -->
-      <?php
-    #}
-   #?>
 </div>
