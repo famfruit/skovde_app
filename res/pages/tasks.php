@@ -13,7 +13,6 @@
       if($cur_month_day == $db_month_day){
         ($row['user'] == $main->gl_user ? $my_tasks++ : null);
         ($row['user'] == $main->gl_user && $row['status'] == 1 ? $my_done++ : null);
-
       }
     }
     $my_perc = round($my_done / $my_tasks * 100);
@@ -41,7 +40,6 @@
 </div>
 <div class="inbox-profile undone">
   <h1>KÖADE</h1>
-
   <?php
   if($my_perc == 100){
     ?>
@@ -69,13 +67,7 @@
           }
 
           if($row['user'] == $main->gl_user){
-
-
             if($cur_month_day == $db_month_day){
-
-
-            #echo $cur_month_day."<br>";
-            #echo $db_month_day;
             $date_form = $rad['time'];
             $date_form = strtotime($date_form) + 60*120;
             $date_form = date("Y-m-d H:i:s", $date_form);
@@ -103,18 +95,6 @@
       }
     }
    ?>
-
-  <!--<a href="?inbox=354624">
-    <div class="inprofile-container">
-      <div class="tasks__on_duty">
-        <span class="t_1">L</span>
-        <span class="t_2">S</span>
-      </div>
-      <h3 class="tasks__title"><?php echo "Läcker i köket" ?></h3>
-      <span class="tasks__type fel">Felanmälan</span>
-    </div>
-  </a>-->
-
 </div>
 
 <div class="inbox-profile done last">
@@ -140,10 +120,7 @@
             array_push($q_users, $rr['user']);
             $db_month_day = date("m-d", strtotime($rr['date']));
           }
-
           if($row['user'] == $main->gl_user){
-
-
             if($cur_month_day == $db_month_day){
             $date_form = $rad['time'];
             $date_form = strtotime($date_form) + 60*120;
@@ -172,27 +149,5 @@
       }
     }
    ?>
-  <!--<a href="?inbox=354624">
-    <div class="inprofile-container">
-      <div class="tasks__on_duty">
-        <span class="t_1">L</span>
-        <span class="t_2">S</span>
-      </div>
-      <h3 class="tasks__title"><?php echo "" ?></h3>
-      <span class="tasks__type fel">Felanmälan</span>
-      <div class="task__completed"></div>
-    </div>
-  </a>
-  <a href="?inbox=354624">
-    <div class="inprofile-container">
-      <div class="tasks__on_duty">
-        <span class="t_1">L</span>
-        <span class="t_2">S</span>
-      </div>
-      <h3 class="tasks__title"><?php echo "" ?></h3>
-      <span class="tasks__type fel">Felanmälan</span>
-      <div class="task__completed"></div>
-    </div>
-  </a> -->
 </div>
 <?php include_once "modules/mf_actionbar.php" ?>
