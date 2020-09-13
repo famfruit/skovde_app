@@ -11,8 +11,7 @@ $main = new base;
 mysqli_set_charset($main->con,"utf8");
 if($main->userAjaxSet){
   $main->auth_user($main->userId, $main->userPw);
-
-  return "asdfs";
+  return;
 }
 if(isset($_POST['logoutbtn'])){
   setcookie('userCookie', null, -1, "/");
@@ -141,11 +140,6 @@ if(isset($_POST['ajp_complete'])){
   }
 
 }
-#[
-#  "comments",
-#  {"user":"stefan","msg":"testmsg"},
-#  {"user":"stefan","msg":"anothermsg"}
-#]
 ########################################
 ############### END ####################
 ########################################
@@ -167,7 +161,6 @@ if(isset($_POST['send_test'])){
   header('Location: ?q=add-page&status=done');
   exit;
 }
-#var_dump(json_decode($_COOKIE['userCookie'], true));
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
