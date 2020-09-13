@@ -164,14 +164,6 @@ if(isset($_POST['send_test'])){
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="res/layout/styles.css">
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="res/js/jquery-3.4.1.min.js"></script>
-    <title>Skövdehem AB - Fastighetsöversikt</title>
-  </head>
   <body>
   <?php
     if(!isset($_COOKIE['userCookie'])){
