@@ -75,7 +75,6 @@
                       <h2 style="margin: 0;margin-top: 10px"><?php echo ucfirst($value["user"]) ?></h2>
                       <span class="lable"><?php echo $value["msg"] ?></span>
                       <?php
-                      #var_dump($value);
                     }
                    ?>
                 </div>
