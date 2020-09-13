@@ -1,13 +1,13 @@
 <?php
 class base {
   public function __construct(){
-    #$this->userLoggedIn = isset($_COOKIE['uLi']) ? true : false;
+    $this->userLoggedIn = isset($_COOKIE['uLi']) ? true : false;
     $this->applicationVersion = "0.0.1";
     $this->userLoggedIn = false;
     $this->userAjaxSet = isset($_POST['lgset']);
     $this->userId = isset($_POST['lgid']) ? $_POST['lgid'] : "";
     $this->userPw = isset($_POST['lgpw']) ? $_POST['lgpw'] : "";
-    $this->con = mysqli_connect('localhost', 'root', '', 'skovde');
+    $this->con = mysqli_connect('HOST', 'DIR', '', 'DB');
     $this->userCookie = $_COOKIE['userCookie'];
     $this->navQuery = isset($_GET['q']) ? $_GET['q'] : null;
     $this->gl_user = $_COOKIE['gl_user'];
