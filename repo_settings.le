@@ -6,7 +6,20 @@
     "js": {
       "#mp_actions.js": ["js", "res/js/mp_actions.js"],
       "#mainlog.js": ["js", "res/js/mainlog.js"]
-    }
+    },
+    "pages": {
+      "modules": {
+        "#mf_actionbar.php": ["php", "res/pages/modules/mf_actionbar.php"]
+      },
+      "#tasks.php": ["php", "res/pages/tasks.php"],
+      "#add-page.php": ["php", "res/pages/add-page.php"],
+      "#inbox.php": ["php", "res/pages/inbox.php"],
+      "#login.html": ["html", "res/pages/login.html"],
+      "#options.php": ["php", "res/pages/options.php"],
+      "#profile.php": ["php", "res/pages/profile.php"],
+      "#reports.php": ["php", "res/pages/reports.php"],
+      "#settings.php": ["php", "res/pages/settings.php"]
+    },
   },
   "#index.php": ["php", "index.php"]
 }
