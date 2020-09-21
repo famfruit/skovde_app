@@ -1,5 +1,12 @@
--allowed_files
-res/classes/#base.class.php
-res/js/#mp_actions.js
-res/js/#mainlog.js
-#index.php
+{
+  "res": {
+    "classes": {
+      "#base.class.php": ["php", "res/classes/base.class.php"]
+    },
+    "js": {
+      "#mp_actions.js": ["js", "res/js/mp_actions.js"],
+      "#mainlog.js": ["js", "res/js/mainlog.js"]
+    }
+  },
+  "#index.php": ["php", "index.php"]
+}
