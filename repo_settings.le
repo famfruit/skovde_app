@@ -1,5 +1,5 @@
-#allowed_files
-res/classes/base.class.php
-res/js/mp_actions.js
-res/js/mainlog.js
-index.php
+-allowed_files
+res/classes/#base.class.php
+res/js/#mp_actions.js
+res/js/#mainlog.js
+#index.php
