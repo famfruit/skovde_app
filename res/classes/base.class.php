@@ -40,7 +40,7 @@ class base {
       "options",
       "settings",
       "tasks",
-      "add-page" // THIS IS FOR TEST PURPOSES ONLY
+      "add-page" // THIS IS FOR TEST PURPOSES ONLY //
     ];
   }
   public function auth_user($userid, $password){
